@@ -175,3 +175,6 @@ cython_debug/
 
 # Zip files
 *.zip
+
+# Backup files
+*.bak
