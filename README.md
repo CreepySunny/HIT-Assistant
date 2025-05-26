@@ -34,8 +34,9 @@ HIT-Assistant/
 │   ├── Batting.csv
 │   ├── Pitching.csv
 │
-├── batting_projection.ipynb
-├── pitching_projection.ipynb
+├── Batting.ipynb
+├── Pitching.ipynb
+├── mcp_server.py
 │
 └── README.md
 ```
