@@ -11,35 +11,75 @@
 
 H.I.T. Assistant (Hyper Intelligent Trading Assistant) is a machine learning-powered system designed to project the future performance of professional baseball players. It is aimed at providing intelligent trade decision support using historical performance data.
 
-This repository contains two main components:
+This repository contains the following main components:
 
-1. `Batting.ipynb` – Builds and evaluates a predictive model for **batting** performance.
-2. `Pitching.ipynb` – Builds and evaluates a predictive model for **pitching** performance.
-
-Each notebook will guide the user through:
-- Data loading and preprocessing  
-- Exploratory data analysis (EDA)  
-- Feature engineering  
-- Model building and evaluation  
-- Player performance projection
+- `HRpAB.ipynb` – Builds and evaluates a predictive model for **batting** performance (Home Runs per At-Bat).
+- `mcp_server.py` – MCP-compliant server exposing the trained model for compliant, auditable predictions.
+- `random_forest.pkl` – Trained Random Forest model used by the MCP server.
+- `data/` – Contains all datasets (e.g., `Batting.csv`).
+- `requirements.txt` – All Python dependencies.
+- `README.md` – Project documentation and setup instructions.
 
 ---
 
 ## 📁 Repository Structure
 
 ```
-HIT-Assistant/
+repo/
 │
 ├── data/
-│   ├── Batting.csv
-│   ├── Pitching.csv
+│   └── Batting.csv
 │
-├── Batting.ipynb
-├── Pitching.ipynb
+├── HRpAB.ipynb
 ├── mcp_server.py
-│
-└── README.md
+├── random_forest.pkl
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── .venv/ (optional, if using a virtual environment)
 ```
+
+---
+
+## 🛠 Installation & Setup
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone <repo-url>
+   cd repo
+   ```
+
+2. **Install Python dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **(Optional) Set up a virtual environment:**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+
+4. **Download datasets:**
+   - Ensure `data/Batting.csv` is present. Other datasets may be required for additional notebooks.
+
+5. **Run Jupyter Notebooks:**
+
+   ```bash
+   jupyter notebook
+   # Open HRpAB.ipynb or Batting wOBA.ipynb in your browser
+   ```
+
+6. **Run the MCP Server:**
+
+   ```bash
+   python mcp_server.py
+   ```
+   - The server exposes the trained model for compliant, auditable predictions.
 
 ---
 
@@ -56,23 +96,6 @@ The data used for this project spans over a century of Major League Baseball (ML
 
 ---
 
-## 🛠 Requirements
-
-- Python 3.8+
-- Jupyter Notebook
-- pandas
-- numpy
-- scikit-learn
-- matplotlib / seaborn
-
-To install the required packages:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
 ## ⚖️ Licensing and Acknowledgments
 
 This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 Unported License.  
@@ -81,10 +104,8 @@ For details, see: http://creativecommons.org/licenses/by-sa/3.0/
 **Acknowledgments:**
 - **Chadwick Baseball Bureau** – Person identification and demographics  
   [http://www.chadwick-bureau.com](http://www.chadwick-bureau.com)
-
 - **Lahman Baseball Database (v2015-01-24)** – Player performance data (1871–2014)  
   Copyright (C) 1996–2015 by Sean Lahman
-
 - **Retrosheet** – Game logs and park code tables  
   [http://www.retrosheet.org](http://www.retrosheet.org)
 
